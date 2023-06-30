@@ -6,11 +6,11 @@ func main() {
 	fmt.Printf("hello world")
 
 	n := 7
-	k := Fibo3(n)
+	k := Fibo(n)
 	fmt.Printf("%v", k)
 }
 
-func Fibo3(n int) int {
+func Fibo(n int) int {
 	if n < 0 {
 		return -1
 	} else {
