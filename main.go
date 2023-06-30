@@ -1,34 +1,40 @@
 package main
 
-import "fmt"
+import (
+	"net/http"
+
+	docs "github.com/auth-cert/docs"
+	"github.com/gin-gonic/gin"
+	swaggerfiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
+)
+
+// @BasePath /api/v1
+
+// PingExample godoc
+// @Summary ping example
+// @Schemes
+// @Description do ping
+// @Tags example
+// @Accept json
+// @Produce json
+// @Success 200 {string} Helloworld
+// @Router /example/helloworld [get]
+func Helloworld(g *gin.Context) {
+	g.JSON(http.StatusOK, "helloworld")
+}
 
 func main() {
-	fmt.Printf("hello world")
-
-	n := 7
-	k := Fibo(n)
-	fmt.Printf("%v", k)
-
-	fmt.Printf("down")
-}
-
-func Fibo(n int) int {
-	if n < 0 {
-		return -1
-	} else {
-		f := Fibonacci()
-		result := 0
-		for i := 0; i < n; i++ {
-			result = f()
+	r := gin.Default()
+	docs.SwaggerInfo.BasePath = "/api/v1"
+	v1 := r.Group("/api/v1")
+	{
+		eg := v1.Group("/example")
+		{
+			eg.GET("/helloworld", Helloworld)
 		}
-		return result
 	}
-}
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
+	r.Run(":8080")
 
-func Fibonacci() func() int {
-	a, b := 0, 1
-	return func() int {
-		a, b = b, a+b
-		return a
-	}
 }
