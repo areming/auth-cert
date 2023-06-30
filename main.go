@@ -8,6 +8,8 @@ func main() {
 	n := 7
 	k := Fibo(n)
 	fmt.Printf("%v", k)
+
+	fmt.Printf("down")
 }
 
 func Fibo(n int) int {
