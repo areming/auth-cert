@@ -1,16 +1,9 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "go-auth for authority",
-        "title": "go-auth",
-        "termsOfService": "http://swagger.io/terms/",
-        "contact": {
-            "name": "areming",
-            "email": "AreMingA@163.com"
-        },
-        "version": "1.0"
+        "contact": {}
     },
-    "host": "localhost:8080",
+    "basePath": "/api/v1",
     "paths": {
         "/example/helloworld": {
             "get": {

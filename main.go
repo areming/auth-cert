@@ -3,7 +3,8 @@ package main
 import (
 	"net/http"
 
-	docs "github.com/auth-cert/docs"
+	"auth-cert/docs"
+
 	"github.com/gin-gonic/gin"
 	swaggerfiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"

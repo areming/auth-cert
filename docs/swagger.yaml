@@ -1,12 +1,6 @@
-host: localhost:8080
+basePath: /api/v1
 info:
-  contact:
-    email: AreMingA@163.com
-    name: areming
-  description: go-auth for authority
-  termsOfService: http://swagger.io/terms/
-  title: go-auth
-  version: "1.0"
+  contact: {}
 paths:
   /example/helloworld:
     get:
