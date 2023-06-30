@@ -1,2 +1,2 @@
-# go-auth
+# auth-cert
 A middleware for auth
