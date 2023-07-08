@@ -1,20 +1,46 @@
-basePath: /api/v1
 info:
   contact: {}
 paths:
-  /example/helloworld:
-    get:
-      consumes:
-      - application/json
-      description: do ping
-      produces:
-      - application/json
+  /login:
+    post:
+      parameters:
+      - description: username
+        in: formData
+        name: username
+        required: true
+        type: string
+      - description: password
+        in: formData
+        name: password
+        required: true
+        type: string
       responses:
         "200":
-          description: OK
+          description: '{"code":"200","msg":"success","data":""}'
           schema:
             type: string
-      summary: ping example
+      summary: 用户登录
       tags:
-      - example
+      - 用户管理
+  /sign/in:
+    post:
+      parameters:
+      - description: username
+        in: formData
+        name: username
+        required: true
+        type: string
+      - description: password
+        in: formData
+        name: password
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"code":"200","msg":"success","data":""}'
+          schema:
+            type: string
+      summary: 用户注册
+      tags:
+      - 用户管理
 swagger: "2.0"

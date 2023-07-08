@@ -16,22 +16,63 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/example/helloworld": {
-            "get": {
-                "description": "do ping",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
+        "/login": {
+            "post": {
                 "tags": [
-                    "example"
+                    "用户管理"
                 ],
-                "summary": "ping example",
+                "summary": "用户登录",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "username",
+                        "name": "username",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "password",
+                        "name": "password",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "{\"code\":\"200\",\"msg\":\"success\",\"data\":\"\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/sign/in": {
+            "post": {
+                "tags": [
+                    "用户管理"
+                ],
+                "summary": "用户注册",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "username",
+                        "name": "username",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "password",
+                        "name": "password",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":\"200\",\"msg\":\"success\",\"data\":\"\"}",
                         "schema": {
                             "type": "string"
                         }
@@ -46,7 +87,7 @@ const docTemplate = `{
 var SwaggerInfo = &swag.Spec{
 	Version:          "",
 	Host:             "",
-	BasePath:         "/api/v1",
+	BasePath:         "",
 	Schemes:          []string{},
 	Title:            "",
 	Description:      "",
