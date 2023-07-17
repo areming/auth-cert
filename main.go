@@ -23,5 +23,5 @@ func main() {
 	v2.Register(router)
 	router.GET("/swagger/v2/*any", ginSwagger.WrapHandler(swaggerFiles.NewHandler(), ginSwagger.InstanceName("v2")))
 
-	router.Run(":8080")
+	router.Run(":8083")
 }

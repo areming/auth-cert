@@ -23,6 +23,8 @@ func Register(router *gin.Engine) {
 
 	//登录
 	v.GET("/login", Login)
+	v.GET("/getall", GetAll)
+
 	//注册
 	v.POST("/sign/in", Regist)
 }

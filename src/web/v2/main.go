@@ -1,8 +1,6 @@
 package v2
 
 import (
-	"auth-cert/src/middleware"
-
 	"github.com/gin-gonic/gin"
 )
 
@@ -23,7 +21,7 @@ import (
 func Register(router *gin.Engine) {
 	v2 := router.Group("v2")
 
-	router.Use(middleware.AuthCheck)
+	// router.Use(middleware.AuthCheck)
 	v2.GET("/others", GetOthers)
 	v2.POST("/others", AddOthers)
 	v2.PUT("/others", EditOthers)
