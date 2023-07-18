@@ -18,7 +18,8 @@ type dbConfig struct {
 	user        string //数据库账号/用户名
 	password    string //数据库密码
 	host        string //数据库ip 域名:端口
-	tablePrefix string //表头
+	tablePrefix string //表头11
+
 }
 
 // 自动调用方法
